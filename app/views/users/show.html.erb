@@ -1,0 +1,29 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+	<aside class="span4">
+		<section>
+			<h1>
+				<%= gravatar_for @user %>
+				<%= @user.name %>
+			</h1>
+		</section>
+	</aside>
+	
+	<div class="span8">
+		<% if @user.stores.any? %>
+			<h3> Stores (<%= @user.stores.count %>)</h3>
+			<ol class="stores">
+				<%= render @stores %>
+			</ol>
+		<% end %>
+	</div>
+</div>
+
+<%= @user.email %>
+
+<nav>
+	<ul>
+		<li><%= link_to "View Stores", '#' %> </li>
+		<li><%= link_to "Edit Stores", '#' %> </li>
+		<li><%= link_to "Create Store", create_path %> </li>
+	</ul>

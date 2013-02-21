@@ -1,0 +1,8 @@
+class AddPaidToStores < ActiveRecord::Migration
+  def change
+    add_column :stores, :paid, :string
+    add_column :stores, :, :boolean,
+    add_column :stores, :unit_price, :string
+    add_column :stores, :, :decimal
+  end
+end

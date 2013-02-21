@@ -1,0 +1,12 @@
+<footer class="footer">
+	<small>
+		<a href ="http://bhavinapp.herokuapp.com/"> My First deployment</a> by Bhavin Thakkar
+	</small>
+	<nav>
+		<ul>
+			<li><%= link_to "About", '#' %></li>
+			<li><%= link_to "Contact", '#' %></li>
+			<li><a href="http://news.railstutorial.org/">News</a></li>
+		</ul>
+	</nav>
+</footer>

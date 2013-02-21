@@ -1,0 +1,5 @@
+class AddUnitpriceToStores < ActiveRecord::Migration
+  def change
+    add_column :stores, :unit_price, :decimal
+  end
+end

@@ -1,0 +1,8 @@
+<div class="centre hero-unit">
+<h1>Sample App</h1>
+<h2>
+	Just a Basic Home page
+</h2>
+	<%= link_to "Sign Up!", signup_path, class: "btn btn-large btn-primary" %>
+</div>
+

@@ -1,0 +1,5 @@
+class Post < ActiveRecord::Base
+  attr_accessible :content, :trial_id
+  belongs_to :trial, :class_name => "Trial", :foreign_key => "trial_id"
+  validates :content , :length => {:maximum => 200}
+end

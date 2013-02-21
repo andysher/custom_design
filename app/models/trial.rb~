@@ -1,0 +1,5 @@
+class Trial < ActiveRecord::Base
+  attr_accessible :email, :name
+  has_many :posts
+  validates_associated :Post
+end
