@@ -4,7 +4,8 @@
 		Created <%= time_ago_in_words(store.created_at) %> ago.
 	
 	<% if current_user?(store.user) || current_user.admin?%>
-		<%=link_to "delete", store, method: :delete, data: { confirm: "Are You Sure?" }, title: store.name, class: "btn" %>
+	
+	<%= link_to "Delete", store, method: :delete, data: { confirm: "Are You Sure?" }, title: store.name, class: "btn btn-primary btn-faco" %>
 	<% end %>
 	</span>
 	<br>Twitter handle : <%= store.twitterh %>
