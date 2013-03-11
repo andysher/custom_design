@@ -34,9 +34,9 @@ describe "StorePages" do
 		describe "as corect user" do
 			before { visit root_path }
 			
-			it "should delete a store" do
-				expect { click_button "Delete" }.to change(Store, :count).by(-1)
-			end
+		#	it "should delete a store" do
+		#		expect { click_button "Delete" }.to change(Store, :count).by(-1)
+		#	end
 		end
 	end
 end

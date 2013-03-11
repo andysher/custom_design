@@ -35,7 +35,7 @@ describe "StorePages" do
 			before { visit root_path }
 			
 			it "should delete a store" do
-				expect { click_button 'store' }.to change(Store, :count).by(-1)
+				expect { click_button "Delete" }.to change(Store, :count).by(-1)
 			end
 		end
 	end

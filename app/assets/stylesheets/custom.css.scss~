@@ -64,7 +64,7 @@ textarea {
 /* all users */
 
 .all-users {
-	font-size: 1.2em;
+	font-size: 1em;
 	a {
 		color: #ddd;
 		&:hover {
@@ -78,7 +78,7 @@ textarea {
 .cop-store {
 	font-size: 1.58em;
   border-radius: 10px;
-	background-color: #111;
+	/*background-color: #111;*/
 	padding: 15px;
 	p {
 	  font-size: 0.65em;
@@ -89,6 +89,18 @@ textarea {
 		&:hover {
 			color: #aaa;
 		}
+	}
+}
+
+/*  modal */
+
+.modal-header {
+	color: #E34363;
+}
+
+.modal-body {
+	p {
+		color: #666;
 	}
 }
 

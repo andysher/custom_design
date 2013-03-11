@@ -1,19 +1,25 @@
-<div class="accordion" id="accordion2">
+
+<div class="accordion" id="accordion2" style="position: relative; z-index: 3;">
   <div class="accordion-group">
     <div class="accordion-heading">
-      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target='<%= "#"+store.name %>'>
+      <div class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#<%= store.name %>">
         <span class = "name"><%= store.name %></span>
 	      <span class = "timestamp">
 		      Created <%= time_ago_in_words(store.created_at) %> ago.	
+	        
 	        <% if current_user?(store.user) || current_user.admin?%>	
-  					<%= link_to "Delete", store, method: :delete, data: { confirm: "Are You Sure?" }, title: store.name, class: "btn btn-primary btn-faco btn-default", style: "float: right; margin-left: 10px;" %>
+  				
+  				 <!-- Button to trigger delete modal -->
+    			 <a href="#wantDelete" role="button" class="btn btn-primary btn-faco btn-default" data-toggle="modal" style="float: right; margin-left: 10px;">Delete</a>
+    			 					
   					<%= link_to " Edit ", "#", data: { confirm: "Are You Sure?" }, title: store.name, class: "btn btn-primary btn-faco btn-default", style: "float: right; padding-left: 23px; padding-right: 23px;" %>
 					<% end %>
+					
 					<br><br>
 				</span>
       </div>
     </div>
-    <div class="accordion-body collapse" id='<%= store.name %>'>
+    <div class="accordion-body collapse" id="<%= store.name %>">
       <div class="accordion-inner">
         <span style="float: left;">
           <p>
@@ -31,3 +37,19 @@
   </div>
 </div>
 
+<!-- Modal for Delete -->
+<div id="wantDelete" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="wantDeleteLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="wantDeleteLabel">Caution!!!!!!</h3>
+	</div>
+	<div class="modal-body">
+		<p>Are You Sure You Want To Delete Store: <a><%= store.name %></a> ?</p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary btn-faco btn-default" data-dismiss="modal" aria-hidden="true">Close</button>
+		<%= link_to "Delete", store, method: :delete, title: store.name, class: "btn btn-primary btn-faco btn-default", style: "float: right; margin-left: 10px;" %>
+  </div>
+</div>
+     
+    
