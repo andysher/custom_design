@@ -1,0 +1,127 @@
+-- MySQL dump 10.13  Distrib 5.5.29, for debian-linux-gnu (x86_64)
+--
+-- Host: localhost    Database: custom_design_development
+-- ------------------------------------------------------
+-- Server version	5.5.29-0ubuntu0.12.04.1
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `schema_migrations`
+--
+
+DROP TABLE IF EXISTS `schema_migrations`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `schema_migrations` (
+  `version` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  UNIQUE KEY `unique_schema_migrations` (`version`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `schema_migrations`
+--
+
+LOCK TABLES `schema_migrations` WRITE;
+/*!40000 ALTER TABLE `schema_migrations` DISABLE KEYS */;
+INSERT INTO `schema_migrations` VALUES ('20121207081101'),('20121207084848'),('20121207090622'),('20121211054912'),('20121211070943'),('20121228092449'),('20130122095430'),('20130122095658'),('20130122100225'),('20130122100453'),('20130122100532'),('20130122100617'),('20130122100817'),('20130128091223'),('20130202094835'),('20130202100739'),('20130220120041'),('20130220125057'),('20130221121522');
+/*!40000 ALTER TABLE `schema_migrations` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `stores`
+--
+
+DROP TABLE IF EXISTS `stores`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `stores` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `twitterh` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `fbid` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pinit` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `custcount` float DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `pic_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pic_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `pic_file_size` int(11) DEFAULT NULL,
+  `pic_updated_at` datetime DEFAULT NULL,
+  `attachment_file_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attachment_content_type` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `attachment_file_size` int(11) DEFAULT NULL,
+  `attachment_updated_at` datetime DEFAULT NULL,
+  `domain` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `phone_number` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` text COLLATE utf8_unicode_ci,
+  `country` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `stores`
+--
+
+LOCK TABLES `stores` WRITE;
+/*!40000 ALTER TABLE `stores` DISABLE KEYS */;
+INSERT INTO `stores` VALUES (10,'Nike',3,'','','',NULL,'2013-02-27 15:36:56','2013-02-27 15:36:56',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','',''),(13,'Reebok',3,'asdasdad','asdasdasd','adasdasd',NULL,'2013-03-02 20:10:32','2013-03-02 20:10:32',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','',''),(21,'Nike',5,'','','',NULL,'2013-03-10 13:03:46','2013-03-10 13:03:46',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'','','','','');
+/*!40000 ALTER TABLE `stores` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `created_at` datetime NOT NULL,
+  `updated_at` datetime NOT NULL,
+  `password_digest` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `admin` tinyint(1) DEFAULT '0',
+  `phone_number` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `organization` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `index_users_on_remember_token` (`remember_token`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `users`
+--
+
+LOCK TABLES `users` WRITE;
+/*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (1,'Aniruddha','sherkar.aniruddha@gmail.com','2013-02-05 11:12:34','2013-02-05 11:12:34','$2a$10$R1T1BeTOFnz4OXZPv37ewuBP89B8AJeM7Wu97lwyKvTBRJh8BZziW','j63QfOejWobVldiP4UenZQ',1,NULL,NULL),(3,'Bhavin Thakkar','bhavin@yahoo.com','2013-02-22 13:50:52','2013-02-22 13:50:52','$2a$10$3g2yn4Jfe8ECoz35YVJZd.und4dG64vQD2vy5lkIgt38CI9YBwcvS','NfWie3LX9f30IQktXK8k4Q',0,'0000000','anchanto'),(5,'Bhavin','bhavinthakkar15@gmail.com','2013-03-04 08:32:58','2013-03-04 08:32:58','$2a$10$7GbhD4/7MKJzu.37xhmIbeLdIijTLqlPxjXWjuwsPnaCO.XiiK/Am','brEyjuFBG0TedWGxxdCR8Q',0,NULL,NULL);
+/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2013-03-12 14:08:35
