@@ -2,13 +2,14 @@
 <html>
 <head>
   <title><%= full_title(yield(:title)) %></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <!--<link href="assets/css/bootstrap-responsive.css" rel="stylesheet">-->
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <%= render 'layouts/shim' %>    
-  
+  <%= render 'layouts/shim' %>  
 </head>
-<body style="background-image:url(home-back.jpg)" >
+<body>
     <%= render 'layouts/header' %>
     
     <div class="container">
@@ -17,7 +18,7 @@
       <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
-      <!-- <%= debug(params) if Rails.env.development? %> -->
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>

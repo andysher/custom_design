@@ -1,13 +1,14 @@
 CustomDesign::Application.configure do
 
-config.after_initialize do
-ActiveMerchant::Billing::Base.mode = :test
 
-::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
-  :login => "bhavin_1360070053_biz_api1.yahoo.in",
+
+config.after_initialize do
+  ActiveMerchant::Billing::Base.mode = :production
+  ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+    :login => "bhavin_1360070053_biz_api1.yahoo.in",
   :password => " 	1360070073",
   :signature => "AQ.ZH1QTLJHyuX-JV8XftUyxLz2gAi37V-VmcSV06pOva53j4iv5Caw7 "
-)
+  )
 end
   # Settings specified here will take precedence over those in config/application.rb
 

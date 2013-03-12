@@ -13,13 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130221121522) do
 
-  create_table "posts", :force => true do |t|
-    t.integer  "trial_id"
-    t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "stores", :force => true do |t|
     t.string   "name"
     t.integer  "user_id"
@@ -27,28 +20,17 @@ ActiveRecord::Schema.define(:version => 20130221121522) do
     t.string   "fbid"
     t.string   "pinit"
     t.float    "custcount"
-    t.datetime "created_at",              :null => false
-    t.datetime "updated_at",              :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "pic_file_name"
     t.string   "pic_content_type"
     t.integer  "pic_file_size"
     t.datetime "pic_updated_at"
-    t.string   "attachment_file_name"
-    t.string   "attachment_content_type"
-    t.integer  "attachment_file_size"
-    t.datetime "attachment_updated_at"
     t.string   "domain"
     t.string   "phone_number"
     t.text     "description"
     t.string   "country"
     t.string   "email"
-  end
-
-  create_table "trials", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
