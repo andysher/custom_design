@@ -29,7 +29,7 @@ html {
 
 body {
   padding-top: 40px;
-  background: url(..assets/images/home-back.jpg);
+  background: url(/home-back.jpg);
   color: #ccc;
 }
 
