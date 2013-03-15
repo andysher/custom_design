@@ -398,6 +398,21 @@ input {
   }
 }
 
+@media (max-width: 480px) {
+  .hidden-desktop {
+    display: inherit !important;
+  }
+  .visible-desktop {
+    display: none !important;
+  }
+  .visible-phone {
+    display: inherit !important;
+  }
+  .hidden-phone {
+    display: none !important;
+  }
+}
+
 .visible-print {
   display: none !important;
 }
@@ -411,7 +426,7 @@ input {
   }
 }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   .row {
     margin-left: -30px;
     *zoom: 1;
@@ -759,7 +774,7 @@ input {
   .row-fluid .thumbnails {
     margin-left: 0;
   }
-}
+}*/
 
 @media (min-width: 768px) and (max-width: 979px) {
   .row {
