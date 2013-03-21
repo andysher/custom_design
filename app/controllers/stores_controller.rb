@@ -9,7 +9,7 @@ class StoresController < ApplicationController
   def create
   	@store = current_user.stores.build(params[:store])
   	if @store.save
-  		UserMailer.registration_confirmation(current_user).deliver
+  		#UserMailer.registration_confirmation(current_user).deliver
   		flash.now[:success] = "Store Created"
   		redirect_to current_user
   	else
