@@ -15,7 +15,7 @@ describe "Static Pages" do
   
     it { should have_selector('h1', :text => 'Welcome to the FACO^') }
     it { should_not have_selector('title', :text => '|Home') }    
-    it { should have_selector('title', :text => "Custom Design")}
+    it { should have_selector('title', :text => "FACO^")}
   end
   
   describe "About page" do

@@ -13,7 +13,7 @@ describe "Static Pages" do
   describe "Home Page" do
   before {visit root_path}
   
-    it { should have_selector('h1', :text => 'Welcome to the FACO^') }
+    it { should have_selector('h1', :text => 'Welcome to FACO^') }
     it { should_not have_selector('title', :text => '|Home') }    
     it { should have_selector('title', :text => "FACO^")}
   end
