@@ -37,6 +37,6 @@ production:
   reconnect: false
   database: custom_design_production
   pool: 5
-  username: facoteam1
-  password: anchanto
+  username: facoteam
+  password: antapict
   socket: /var/run/mysqld/mysqld.sock
